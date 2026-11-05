@@ -24,20 +24,12 @@
       this.engine.onStart = () => this.view.intro.classList.add("gone");
       this.engine.onComplete = () => this.onComplete();
       this.bind();
-      this.last = performance.now();
-      this.raf = requestAnimationFrame((t) => this.frame(t));
-      await nextFrame();
-      if (this.sfx) this.sfx.intro();
-      this.view.bg.classList.add("on");
-      this.view.intro.classList.add("on");
-      this.view.fx = { phase: "in", t0: performance.now() };
-      if (this.view.grid) this.view.grid.classList.add("on");
-      this.playIntro();
-      await sleep(520);
-      if (this.dead) return;
+      // Snapshot first, while the section is still hidden: reading a big section blocks for a moment,
+      // and doing it before anything moves keeps the appear effect and the intro smooth.
       try {
         await Promise.race([document.fonts.ready, sleep(1200)]);
       } catch (_) {}
+      if (this.dead) return;
       this.view.measure();
       let model;
       try {
@@ -50,6 +42,17 @@
       this.view.mount(model);
       this.engine.setModel(model);
       this.model = model;
+      // now the show: the canvas comes in over the section, the intro plays, the cursors gather
+      this.last = performance.now();
+      this.raf = requestAnimationFrame((t) => this.frame(t));
+      await nextFrame();
+      if (this.sfx) this.sfx.intro();
+      this.view.bg.classList.add("on");
+      this.view.intro.classList.add("on");
+      this.view.fx = { phase: "in", t0: performance.now() };
+      if (this.view.grid) this.view.grid.classList.add("on");
+      this.t0 = performance.now();
+      this.playIntro();
       if (o.intro === "prompt") await this.typePrompt();
       const wait = (o.introMs ?? 1500) - (performance.now() - this.t0);
       if (wait > 0) await sleep(wait);

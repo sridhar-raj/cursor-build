@@ -9,7 +9,75 @@ A scroll-in animation for React sites. When a section scrolls into view, a crew 
 
 Then the cursors leave and the real, clickable section is handed back.
 
+![CursorBuild: a section rebuilt by a crew of cursors](media/05-marquee-grid.gif)
+
 This repo is a [Claude Code](https://claude.com/claude-code) skill, and the component inside it also works on its own.
+
+## Examples
+
+Our 5 examples, from the [OriginKit X](https://originkit-x-posts.vercel.app) studio. Each is a real section, filling the screen, with its own intro and its own appear. The cursors rebuild it as it scrolls in, then hand back the real section.
+
+### 01 · `intro="logo"` + `appear="fade"`
+
+The cursors orbit the site's logo, fan out and build; the canvas fades away over the real hero. This one uses `cursors={6}` for a calm build.
+
+![logo intro, fade appear](media/01-logo-fade.gif)
+
+```tsx
+<CursorBuild intro="logo" appear="fade" cursors={6}>
+  <Hero />
+</CursorBuild>
+```
+
+### 02 · `intro="prompt"` + `appear="wipe"`
+
+A prompt bar types the request and Build is pressed. The crew fans out of it, each cursor saying what it's doing. The canvas wipes away top to bottom.
+
+![prompt intro, wipe appear](media/02-prompt-wipe.gif)
+
+```tsx
+<CursorBuild intro="prompt" prompt="Pricing section, dark, three plans, Studio highlighted" appear="wipe" chat>
+  <Pricing />
+</CursorBuild>
+```
+
+### 03 · `intro="burst"` + `appear="iris"`
+
+A circle opens the canvas. Forty cursors knot around a pulsing dot, then explode outward and build; a growing hole reveals the real section.
+
+![burst intro, iris appear](media/03-burst-iris.gif)
+
+```tsx
+<CursorBuild intro="burst" appear="iris" cursors={40}>
+  <Bento />
+</CursorBuild>
+```
+
+### 04 · `intro="join"` + `appear="scan"`
+
+"Ada joined", "Linus joined"… presence pills stack up as each named cursor arrives. The section is revealed behind a glowing scan line.
+
+![join intro, scan appear](media/04-join-scan.gif)
+
+```tsx
+<CursorBuild intro="join" appear="scan" labels>
+  <Footer />
+</CursorBuild>
+```
+
+### 05 · `intro="marquee"` + `appear="grid"`
+
+A selection box grows over the section with a live W × H badge. A named team (Layout, Type, Image, QA…) builds it on a dotted design canvas, which fades before the hand-back.
+
+![marquee intro, grid appear](media/05-marquee-grid.gif)
+
+```tsx
+<CursorBuild intro="marquee" appear="grid" agents chat>
+  <Features />
+</CursorBuild>
+```
+
+The clips are sped up to match a normal browser: they were recorded headless, which renders slower. In the browser, a section takes about 10 to 12 seconds from scroll-in to hand-back.
 
 ## Use the component
 
