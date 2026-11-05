@@ -12,7 +12,7 @@ description: Make website sections build themselves as they scroll into view, wi
 
 Last, the cursors flock and leave, and the real, clickable section is handed back. The page never re-renders, so links, forms and hover states work as before.
 
-The engine is **swarm-cursors** by Dhvanil Patel ([repo](https://github.com/DhvanilPatel/swarm-cursors)). It is a tribute to **Swarm** by Joel Califa ([site](https://califa.github.io/swarm-site/), [source](https://github.com/califa/swarm-site)), whose motion design it adapts. Both are used with permission. Keep this credit (it heads the file) in anything that ships the component, and check the permission covers redistribution before giving the file to other people.
+Cursor engine: [swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors) by Dhvanil Patel, adapted from [Swarm](https://califa.github.io/swarm-site/) by Joel Califa. Used with permission.
 
 ## Files
 

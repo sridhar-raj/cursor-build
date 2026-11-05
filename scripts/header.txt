@@ -7,11 +7,9 @@
  * lines, Figma rulers and red guides that text snaps to, ⌥-drag duplicates of repeated cards, images
  * swept on. The cursors orbit a logo first, fan out, build, flock, and hand the real section back.
  *
- * The engine below is the swarm-cursors engine by Dhvanil Patel
- * (https://github.com/DhvanilPatel/swarm-cursors), itself a tribute to Swarm by Joel Califa
- * (https://califa.github.io/swarm-site/, https://github.com/califa/swarm-site), whose motion design
- * it adapts: the cursor set, the swarm and flocking physics, the build choreography, the rulers.
- * Used with permission. It is kept as-is apart from the changes that scope it to one element:
+ * Cursor engine: swarm-cursors by Dhvanil Patel (https://github.com/DhvanilPatel/swarm-cursors),
+ * adapted from Swarm by Joel Califa (https://califa.github.io/swarm-site/). Used with permission.
+ * It is kept as-is apart from the changes that scope it to one element:
  *   - the wrapped element is the "page" (its box is the world; the viewport's offset from it is the
  *     scroll), and the blank canvas covers only that element
  *   - the overlay lets clicks through, is clipped to the element, and several can run at once

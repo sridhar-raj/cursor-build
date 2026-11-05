@@ -123,4 +123,4 @@ cd scripts && python3 build-cursor-build.py ../assets/CursorBuild.tsx
 
 ## Credit
 
-The engine is **swarm-cursors** by Dhvanil Patel ([repo](https://github.com/DhvanilPatel/swarm-cursors)). It is a tribute to **Swarm** by Joel Califa ([site](https://califa.github.io/swarm-site/), [source](https://github.com/califa/swarm-site)), whose motion design it adapts: the cursor set, the flocking physics, the build choreography and the rulers. Used with permission. Keep this credit wherever the component ships.
+Cursor engine: [swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors) by Dhvanil Patel, adapted from [Swarm](https://califa.github.io/swarm-site/) by Joel Califa. Used with permission.
