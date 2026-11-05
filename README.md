@@ -123,4 +123,4 @@ cd scripts && python3 build-cursor-build.py ../assets/CursorBuild.tsx
 
 ## Credit
 
-Cursor engine: [swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors) by Dhvanil Patel, adapted from [Swarm](https://califa.github.io/swarm-site/) by Joel Califa. Used with permission.
+Cursor engine: [swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors) by Dhvanil Patel, adapted from [Swarm](https://califa.github.io/swarm-site/) by Joel Califa.
