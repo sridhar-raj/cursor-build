@@ -1,0 +1,25 @@
+// @ts-nocheck
+/* eslint-disable */
+"use client";
+/*
+ * CursorBuild: a scroll-in animation where a crew of multiplayer cursors rebuilds the section it
+ * wraps, live: crosshair-drawn boxes with W × H badges, typed text with an I-beam and caret, pen-tool
+ * lines, Figma rulers and red guides that text snaps to, ⌥-drag duplicates of repeated cards, images
+ * swept on. The cursors orbit a logo first, fan out, build, flock, and hand the real section back.
+ *
+ * The engine below is the swarm-cursors engine by Dhvanil Patel
+ * (https://github.com/DhvanilPatel/swarm-cursors), itself a tribute to Swarm by Joel Califa
+ * (https://califa.github.io/swarm-site/, https://github.com/califa/swarm-site), whose motion design
+ * it adapts: the cursor set, the swarm and flocking physics, the build choreography, the rulers.
+ * Used with permission. It is kept as-is apart from the changes that scope it to one element:
+ *   - the wrapped element is the "page" (its box is the world; the viewport's offset from it is the
+ *     scroll), and the blank canvas covers only that element
+ *   - the overlay lets clicks through, is clipped to the element, and several can run at once
+ *   - the intro orbit and the finale flock centre on the element; rulers sit on its corner
+ *   - no HUD, no keyboard shortcuts, no page scan or auto-scroll; sound is opt-in
+ * Added on top: start on scroll into view, Figma-style name labels, chat labels that say what each
+ * cursor is doing, your own agent names and colours, and a prompt-bar intro.
+ *
+ * Needs only React. Paste the file, wrap a section:  <CursorBuild><Pricing /></CursorBuild>
+ */
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
